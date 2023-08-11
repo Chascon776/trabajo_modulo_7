@@ -1,0 +1,46 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Información de Laboratorios</h1>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="border" scope="col">Nombre</th>
+            <th class="border" scope="col">Ciudad</th>
+            <th class="border" scope="col">Pais</th>
+            <th class="border" scope="col">Editar</th>
+            <th class="border" scope="col">Borrar</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+        
+        {% for lista in lista_lab %}
+        <tr>
+            <td class="border">{{lista.nombre_lab}}</td>
+            <td class="border">{{lista.ciudad}}</td>
+            <td class="border">{{lista.pais}}</td>
+            <td class="border"><a href="/editar/{{lista.id}}">Actualizar</a></td>
+            <td class="border"><a href="/eliminar/{{lista.id}}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+<div class="alert alert-warning" role="alert">
+    {{error}}
+</div>
+
+<div>
+    <td> <a href="/laboratorio">Agregar Laboratorios</a></td>
+
+
+</div>
+
+{% endblock %}

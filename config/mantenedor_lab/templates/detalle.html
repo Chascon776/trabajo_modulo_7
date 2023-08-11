@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Editar Laboratorio</h1>
+{{error}}
+<div>
+<form method="POST" >
+    <table class="">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">Pais</th>
+                <th scope="col">acciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            {%csrf_token%}
+            <tr>
+             <td>{{formulario.nombre_lab}}</td>
+             <td>{{formulario.ciudad}}</td>
+             <td>{{formulario.pais}}</td>
+             <td scope="row">
+                    <button class="btn btn-link"><i class="fa-solid fa-check"></i></button>
+                    <a href="/"><i class="fa-solid fa-x"></i></button></a>
+            
+            </th>
+            </tr>
+        </tbody>
+
+    </table>
+<div>
+   
+</form>
+
+
+{% endblock %}

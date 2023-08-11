@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Lista Tareas</h1>
+{{error}}
+
+<form method="POST" >
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">Pais</th>
+                <th scope="col">Confirmar</th>
+                
+            </tr>
+        </thead>
+
+        <tbody>
+            {%csrf_token%}
+            <tr>
+                <td> {{lista.nombre_lab}}</td>
+                <td> {{lista.ciudad}}</td>
+                <td> {{lista.pais}}</td>
+         <td scope="row">
+                <button class="btn btn-link"><i class="fa-solid fa-check"></i></button>
+                <a href="/"><i class="fa-solid fa-x"></i></button></a>
+            </th>
+            </tr>
+        </tbody>
+
+    </table>
+   
+</form>
+
+
+{% endblock %}
